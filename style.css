@@ -2520,7 +2520,7 @@ a {
   line-height: 22px;
 }
 .pay-tariff-modal__row .tariffs {
-  max-height: 600px;
+  max-height: 550px;
   overflow-y: auto;
 }
 .pay-tariff-modal__row .tariffs__container .tariff-item {

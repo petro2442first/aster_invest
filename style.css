@@ -2476,7 +2476,7 @@ a {
 }
 .pay-tariff-modal__container {
   background: #000;
-  max-height: 800px;
+  max-height: 700px;
   padding: 60px 70px;
   position: relative;
 }

@@ -14,18 +14,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="profile-body">
-    <div class="profile">
-      <div class="profile__sidebar" style="display: none">
-        <div class="profile__logo">
-          <img src="images/about-1.png" alt="" />
+    <div class="pm">
+      <nav class="pm__menu">
+        <div class="pm__menu-burger">
+          <img src="images/burger.svg" alt="" />
         </div>
-        <div class="user-info">
-          <div class="user-info__avatar">
-            <img src="images/default-avatar.png" alt="" />
+        <ul class="pm__menu-list">
+          <li class="pm__menu-item">
+            <a class="active" href="#" data-tabID="main">Личный кабинет</a>
+          </li>
+          <li class="pm__menu-item">
+            <a href="#" data-tabID="history">История транзакций</a>
+          </li>
+          <li class="pm__menu-item">
+            <a href="#" data-tabID="invest">Инвестировать</a>
+          </li>
+          <li class="pm__menu-item">
+            <a href="#" data-tabID="calc">Калькулятор</a>
+          </li>
+          <li class="pm__menu-item">
+            <a href="#" data-tabID="referrals">Рефералы</a>
+          </li>
+          <li class="pm__menu-item">
+            <a href="index.html">Главная</a>
+          </li>
+          <li class="pm__menu-support">
+            <a href="#">
+              <img src="images/tech-support.svg" alt="" />
+              Поддержка
+            </a>
+          </li>
+          <div class="pm__menu-langs">
+            <a href="#">
+              <p>Язык: <span>Русский</span></p>
+              <img src="images/langs/ru.svg" alt=""
+            /></a>
+            <ul class="lang-sub-menu">
+              <li class="sub-item">
+                <a href="#"
+                  ><img src="images/langs/ru.svg" alt=""
+                /></a>
+              </li>
+              <li class="sub-item">
+                <a href="#"
+                  ><img src="images/langs/gb.svg" alt=""
+                /></a>
+              </li>
+              <li class="sub-item">
+                <a href="#"
+                  ><img src="images/langs/ch.svg" alt=""
+                /></a>
+              </li>
+              <li class="sub-item">
+                <a href="#"
+                  ><img src="images/langs/de.svg" alt=""
+                /></a>
+              </li>
+              <li class="sub-item">
+                <a href="#"
+                  ><img src="images/langs/fr.svg" alt=""
+                /></a>
+              </li>
+            </ul>
           </div>
-          <div class="user-info__name">Иванов Генадий</div>
-          <div class="user-info__email">IvanovGena@gmail.com</div>
-        </div>
+        </ul>
+      </nav>
+      <div class="pm__info">
+        <img src="images/default-avatar.png" alt="" />
+        <h2>Иванов Генадий</h2>
+        <h3>IvanovGena@gmail.com</h3>
+      </div>
+      <div class="pm__main current" data-tab="main">
         <div class="finance">
           <div class="finance__balance">
             <p>Баланс</p>
@@ -37,53 +96,6 @@
           </div>
           <button class="finance__pay-cash">Pay cash</button>
           <button class="finance__cash-out">Cash out</button>
-        </div>
-        <div class="profile__langs">
-          <a href="#">
-            <p>Язык: <span>Русский</span></p>
-            <img src="images/langs/ru.svg" alt=""
-          /></a>
-          <ul class="lang-sub-menu">
-            <li class="sub-item">
-              <a href="#"><img src="images/langs/ru.svg" alt="" /></a>
-            </li>
-            <li class="sub-item">
-              <a href="#"><img src="images/langs/gb.svg" alt="" /></a>
-            </li>
-            <li class="sub-item">
-              <a href="#"><img src="images/langs/ch.svg" alt="" /></a>
-            </li>
-            <li class="sub-item">
-              <a href="#"><img src="images/langs/de.svg" alt="" /></a>
-            </li>
-            <li class="sub-item">
-              <a href="#"><img src="images/langs/fr.svg" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-        <button class="profile__logout">
-          <img src="images/exit.svg" alt="" /> Выход
-        </button>
-      </div>
-      <div class="profile__container">
-        <div class="profile__title">Личный кабинет</div>
-        <div class="profile__row">
-          <div class="choose-tariff">
-            <label for="choose-tariff">Выбор тарифа:</label>
-            <select name="choose-tariff" id="choose-tariff">
-              <option value="silver">Silver</option>
-              <option value="gold">Gold</option>
-              <option value="platinum">Platinum</option>
-              <option value="infinity">Infinity</option>
-            </select>
-          </div>
-          <button class="start-invest">
-            Начать <img src="images/dot.svg" alt="" />
-          </button>
-          <div class="referral-link">
-            <img src="images/copy.svg" alt="" />
-            <p>Ваша реферальная ссылка!</p>
-          </div>
         </div>
         <div class="deposits">
           <div class="deposits__title">Мои депозиты:</div>
@@ -145,6 +157,8 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="pm__calc" data-tab="calc">
         <div class="calculator">
           <div class="calculator__title">Калькулятор тарифов:</div>
           <div class="calculator__tariff">
@@ -169,6 +183,8 @@
             <input type="number" name="" id="calc-income" readonly />
           </div>
         </div>
+      </div>
+      <div class="pm__history" data-tab="history">
         <div class="history">
           <div class="history__title">История транзакций:</div>
           <div class="history__list">
@@ -180,11 +196,34 @@
               <div class="history__value">-200$</div>
               <div class="history__description">Invest in macroshems</div>
             </div>
+            <div class="history__item in">
+              <div class="history__value">+300$</div>
+              <div class="history__description">Paid on your invest cash</div>
+            </div>
+            <div class="history__item out">
+              <div class="history__value">-200$</div>
+              <div class="history__description">Invest in macroshems</div>
+            </div>
+            <div class="history__item in">
+              <div class="history__value">+300$</div>
+              <div class="history__description">Paid on your invest cash</div>
+            </div>
+            <div class="history__item out">
+              <div class="history__value">-200$</div>
+              <div class="history__description">Invest in macroshems</div>
+            </div>
+            <div class="history__item in">
+              <div class="history__value">+300$</div>
+              <div class="history__description">Paid on your invest cash</div>
+            </div>
+            <div class="history__item out">
+              <div class="history__value">-200$</div>
+              <div class="history__description">Invest in macroshems</div>
+            </div>
           </div>
-          <button class="history__see-more">
-            Увидеть больше <img src="images/dot.svg" alt="" />
-          </button>
         </div>
+      </div>
+      <div class="pm__referrals" data-tab="referrals">
         <div class="referrals">
           <div class="referrals__value">
             <span>15</span>
@@ -195,39 +234,60 @@
               <div class="referrals__thumb">
                 <img src="images/ref-avatar.png" alt="" />
               </div>
-              <div class="referrals__name">Виктория</div>
+              <div class="referrals__name">Виктория Никифорова</div>
             </div>
             <div class="referrals__item">
               <div class="referrals__thumb">
                 <img src="images/ref-avatar.png" alt="" />
               </div>
-              <div class="referrals__name">Виктория</div>
+              <div class="referrals__name">Виктория Никифорова</div>
             </div>
             <div class="referrals__item">
               <div class="referrals__thumb">
                 <img src="images/ref-avatar.png" alt="" />
               </div>
-              <div class="referrals__name">Виктория</div>
+              <div class="referrals__name">Виктория Никифорова</div>
             </div>
             <div class="referrals__item">
               <div class="referrals__thumb">
                 <img src="images/ref-avatar.png" alt="" />
               </div>
-              <div class="referrals__name">Виктория</div>
+              <div class="referrals__name">Виктория Никифорова</div>
             </div>
             <div class="referrals__item">
               <div class="referrals__thumb">
                 <img src="images/ref-avatar.png" alt="" />
               </div>
-              <div class="referrals__name">Виктория</div>
+              <div class="referrals__name">Виктория Никифорова</div>
             </div>
           </div>
         </div>
-        <div class="support">
-          <a href="#">
-            <img src="images/tech-support.svg" alt="" />
-            Поддержка
-          </a>
+        <div class="referral-link">
+          <img src="images/copy.svg" alt="" />
+          <p>Ваша реферальная ссылка!</p>
+        </div>
+      </div>
+      <div class="pm__invest" data-tab="invest">
+        <h2>Выбор тарифа:</h2>
+        <div class="tariff">
+          <div class="tariff__price">500$ - 1000$</div>
+          <div class="tariff__item gold">
+            <h3>SILVER</h3>
+            <p>0.7%/day</p>
+          </div>
+          <div class="tariff__select">
+            <select name="choose-tariff" id="tariff">
+              <option value="silver">Выбор тарифа</option>
+              <option value="silver">Silver</option>
+              <option value="gold">Gold</option>
+              <option value="platinum">Platinum</option>
+              <option value="infinity">Infinity</option>
+            </select>
+          </div>
+          <div class="tariff__period">
+            Deposit period: <span>21 business days</span>
+          </div>
+          <div class="tariff__invest-btn">Инвестировать</div>
         </div>
       </div>
     </div>
